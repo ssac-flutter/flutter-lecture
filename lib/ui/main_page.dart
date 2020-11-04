@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/animation_page.dart';
 import 'package:flutter_app/ui/first_page.dart';
 import 'package:flutter_app/ui/second_page.dart';
 import 'package:flutter_app/ui/third_page.dart';
@@ -16,6 +17,7 @@ class _MainPageState extends State<MainPage> {
     FirstPage(),  // _pages[0]
     SecondPage(), // _pages[1]
     ThirdPage(), // _pages[2]
+    AnimationPage(),
   ];
 
   @override
@@ -23,6 +25,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: _pages[_index],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -35,6 +38,10 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.info_outline),
             label: '내 정보',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline),
+            label: '애니메이션',
           ),
         ],
         currentIndex: _index,

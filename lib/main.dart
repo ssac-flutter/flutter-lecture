@@ -18,14 +18,14 @@ void main() {
   runApp(MyApp());
 }
 
+// 메인 App
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '이 타이틀은 어디나 쓰는가??',
       theme: ThemeData(
         primarySwatch: Colors.orange,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainPage(),
     );
