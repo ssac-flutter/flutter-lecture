@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage> {
             label: '내 정보',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline),
+            icon: Icon(Icons.animation),
             label: '애니메이션',
           ),
         ],
