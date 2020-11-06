@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Album {
   int userId;
   int id;
@@ -22,4 +24,8 @@ class Album {
     return map;
   }
 
+  @override
+  String toString() {
+    return 'Album{userId: $userId, id: $id, title: $title}';
+  }
 }

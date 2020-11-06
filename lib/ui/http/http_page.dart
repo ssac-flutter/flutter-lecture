@@ -41,7 +41,12 @@ class _HttpPageState extends State<HttpPage> {
         child: Text(result),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          Album album = await fetchAlbum();
+          setState(() {
+            result = album.toString();
+          });
+        },
         child: Icon(Icons.send),
       ),
     );
