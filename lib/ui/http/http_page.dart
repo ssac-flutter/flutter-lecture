@@ -22,6 +22,21 @@ Future<Album> fetchAlbum() async {
   }
 }
 
+Future<List<Album>> fetchAlbums() async {
+  // await: Future가 종료되는 것을 기다린다, async 키워드가 붙어있는 메서드 안에서만 사용 가능
+  final http.Response response =
+  await http.get('https://jsonplaceholder.typicode.com/albums');
+
+  // 200 OK
+  if (response.statusCode == 200) {
+    final Iterable json = jsonDecode(response.body);
+    return json.map((e) => Album.fromJson(e)).toList();
+  } else {
+    // 에러가 나면 예외를 발생시키고 종료
+    throw Exception('Failed to load album');
+  }
+}
+
 // stful
 class HttpPage extends StatefulWidget {
   @override
@@ -42,9 +57,9 @@ class _HttpPageState extends State<HttpPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          Album album = await fetchAlbum();
+          List<Album> albums = await fetchAlbums();
           setState(() {
-            result = album.toString();
+            result = albums.toString();
           });
         },
         child: Icon(Icons.send),
