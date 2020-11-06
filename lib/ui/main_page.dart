@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/animation_page.dart';
 import 'package:flutter_app/ui/first_page.dart';
+import 'package:flutter_app/ui/http/http_page.dart';
 import 'package:flutter_app/ui/second_page.dart';
 import 'package:flutter_app/ui/third_page.dart';
 
@@ -18,6 +19,7 @@ class _MainPageState extends State<MainPage> {
     SecondPage(), // _pages[1]
     ThirdPage(), // _pages[2]
     AnimationPage(),
+    HttpPage(),
   ];
 
   @override
@@ -42,6 +44,10 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.animation),
             label: '애니메이션',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.network_check),
+            label: 'http',
           ),
         ],
         currentIndex: _index,
