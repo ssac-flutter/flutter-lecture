@@ -47,6 +47,20 @@ class _HttpPageState extends State<HttpPage> {
   String result = '값 없음';
 
   @override
+  void initState() {
+    super.initState();
+
+    init();
+  }
+
+  Future<void> init() async {
+    List<Album> albums = await fetchAlbums();
+    setState(() {
+      result = albums.toString();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
