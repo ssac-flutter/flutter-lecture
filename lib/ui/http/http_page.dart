@@ -50,7 +50,15 @@ class _HttpPageState extends State<HttpPage> {
   void initState() {
     super.initState();
 
-    init();
+    // Future를 사용하는 방법 1
+    // init();
+
+    // Future를 사용하는 방법 2
+    fetchAlbums().then((value) {
+      setState(() {
+        result = value.toString();
+      });
+    });
   }
 
   Future<void> init() async {
