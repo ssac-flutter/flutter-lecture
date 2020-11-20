@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/async_page.dart';
 import 'package:flutter_app/ui/http/http_page.dart';
 import 'package:flutter_app/ui/list_exam_page.dart';
 
@@ -33,6 +34,15 @@ class FirstPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => HttpPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('비동기 프로그래밍'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AsyncPage()),
                 );
               },
             ),
