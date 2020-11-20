@@ -1,13 +1,46 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/http/http_page.dart';
+import 'package:flutter_app/ui/list_exam_page.dart';
 
 class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('리스트 복습'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ListExamPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Http 통신'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HttpPage()),
+                );
+              },
+            ),
+          ],
+        ),// Populate the Drawer in the next step.
+      ),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
         title: Text('Kakao T'),
       ),
       body: ListView(

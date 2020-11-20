@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/animation_page.dart';
 import 'package:flutter_app/ui/first_page.dart';
-import 'package:flutter_app/ui/http/http_page.dart';
 import 'package:flutter_app/ui/search_page.dart';
 import 'package:flutter_app/ui/second_page.dart';
 import 'package:flutter_app/ui/third_page.dart';
@@ -20,7 +19,6 @@ class _MainPageState extends State<MainPage> {
     SecondPage(), // _pages[1]
     ThirdPage(), // _pages[2]
     AnimationPage(),
-    // HttpPage(),
     SearchPage(),
   ];
 
@@ -51,11 +49,6 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.search),
             label: '검색',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.network_check),
-          //   label: 'http',
-          // ),
-
         ],
         currentIndex: _index,
         onTap: (int value) {
