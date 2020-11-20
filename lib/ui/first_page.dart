@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/async_page.dart';
 import 'package:flutter_app/ui/http/http_page.dart';
 import 'package:flutter_app/ui/list_exam_page.dart';
+import 'package:flutter_app/ui/quiz_page.dart';
 import 'package:flutter_app/ui/stream_page.dart';
 
 class FirstPage extends StatelessWidget {
@@ -53,6 +54,15 @@ class FirstPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => StreamPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('퀴즈'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => QuizPage()),
                 );
               },
             ),
