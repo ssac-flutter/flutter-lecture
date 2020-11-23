@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/async_page.dart';
 import 'package:flutter_app/ui/http/http_page.dart';
+import 'package:flutter_app/ui/inherited_widget/counter_page.dart';
+import 'package:flutter_app/ui/inherited_widget/inherited_counter.dart';
 import 'package:flutter_app/ui/list_exam_page.dart';
 import 'package:flutter_app/ui/quiz_page.dart';
 import 'package:flutter_app/ui/stream_page.dart';
@@ -63,6 +65,15 @@ class FirstPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => QuizPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('InheritedWidget'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InheritedCounter(child: CounterPage())),
                 );
               },
             ),
