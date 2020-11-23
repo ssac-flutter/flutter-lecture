@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/counter.dart';
-import 'package:flutter_app/list_exam.dart';
-import 'package:flutter_app/navigation/first_page.dart';
-import 'package:flutter_app/ui/list_exam_page.dart';
 import 'package:flutter_app/ui/main_page.dart';
+import 'package:flutter_app/ui/provider/counter.dart';
+import 'package:provider/provider.dart';
 
-class Human {
+class Human {}
 
-}
-
-class Man extends Human {
-
-}
+class Man extends Human {}
 
 bool isMarried;
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider.value(
+      value: Counter(),
+      child: MyApp(),
+    ),
+  );
 }
 
 // 메인 App
@@ -36,44 +35,44 @@ class MyApp extends StatelessWidget {
 // stless
 class HomePage extends StatelessWidget {
   Widget titleSection = Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Container(
-        color: Colors.green,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Container(
-                color: Colors.red,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Title',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
+      color: Colors.green,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.red,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Title',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
                     ),
-                    Text(
-                      'Sub Title',
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
+                  ),
+                  Text(
+                    'Sub Title',
+                    style: TextStyle(
+                      color: Colors.grey,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-            Icon(
-              Icons.star,
-              color: Colors.red,
-            ),
-            Text('41'),
-          ],
-        ),
+          ),
+          Icon(
+            Icons.star,
+            color: Colors.red,
+          ),
+          Text('41'),
+        ],
       ),
-    );
+    ),
+  );
 
   Widget _buildButtonSection() {
     return Row(
@@ -104,7 +103,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildImage() {
-    return Image.asset('images/lake.jpg',
+    return Image.asset(
+      'images/lake.jpg',
       width: double.infinity,
       height: 240.0,
       fit: BoxFit.cover,
@@ -115,12 +115,17 @@ class HomePage extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, color: color,),
-        Text(label, style: TextStyle(color: color),),
+        Icon(
+          icon,
+          color: color,
+        ),
+        Text(
+          label,
+          style: TextStyle(color: color),
+        ),
       ],
     );
   }
-
 }
 
 // stless
