@@ -1,0 +1,3 @@
+class Firebase {
+  String arg;
+}
