@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
-  String name;
+  final String name;
 
-  SecondPage(String name) {
-    this.name = name;
-  }
+  SecondPage(this.name);
 
   void myFunc(int a) => print('333');
 

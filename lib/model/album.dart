@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Album {
-  int userId;
-  int id;
-  String title;
+  late int userId;
+  late int id;
+  late String title;
 
   Album({
-      this.userId, 
-      this.id, 
-      this.title});
+      this.userId = 0,
+      this.id = 0,
+      this.title = ""});
 
   Album.fromJson(Map<String, dynamic> json) {
     userId = json["userId"];

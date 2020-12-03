@@ -38,16 +38,18 @@ class _FirstPageState extends State<FirstPage> {
           // 옛날 거
           RaisedButton(
             onPressed: () {
-              Future<String> future = Navigator.push(
+              Future<String?> future = Navigator.push<String?>(
                 context,
                 MaterialPageRoute(builder: (context) => SecondPage('아래꺼')),
               );
 
               future.then((value) {
                 setState(() {
-                  if (value != null) {
-                    name = value;
-                  }
+                  // if (value != null) {
+                  //   // String = dynamic OK??
+                  //   name = value;
+                  // }
+                  name = value ?? '';
                 });
               });
             },

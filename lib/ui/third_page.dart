@@ -8,6 +8,7 @@ class ThirdPage extends StatelessWidget {
     User("사나", age: 30, imageUrl: 'https://img.huffingtonpost.com/asset/5ceb2f97240000530085474d.jpeg?cache=cjHGUeLFMo&ops=crop_0_94_1001_722,scalefit_630_noupscale'),
     User("한석봉", age: 20),
     User("나연", age: 50, imageUrl: 'https://dimg.donga.com/wps/NEWS/IMAGE/2020/03/03/99974590.2.jpg'),
+    User('test', age: 10)
   ];
 
   @override

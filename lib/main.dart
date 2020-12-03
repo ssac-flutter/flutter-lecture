@@ -7,7 +7,7 @@ class Human {}
 
 class Man extends Human {}
 
-bool isMarried;
+bool isMarried = false;
 
 void main() {
   runApp(

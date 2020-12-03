@@ -16,7 +16,7 @@ class _CounterPageState extends State<CounterPage> {
             title: Text('InheritedWidget'),
           ),
           body: Center(
-          child: Text('${InheritedCounter.of(innerContext).count}', style: TextStyle(fontSize: 40))),
+          child: Text('${InheritedCounter?.of(innerContext)?.count}', style: TextStyle(fontSize: 40))),
           floatingActionButton: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -25,7 +25,7 @@ class _CounterPageState extends State<CounterPage> {
                 child: Icon(Icons.add),
                 onPressed: () {
                   setState(() {
-                    InheritedCounter.of(innerContext).count++;
+                    InheritedCounter?.of(innerContext)?.count++;
                   });
                 },
               ),
@@ -53,7 +53,7 @@ class OtherPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('${InheritedCounter.of(context).count}'),
+      child: Text('${InheritedCounter?.of(context)?.count}'),
     );
   }
 }

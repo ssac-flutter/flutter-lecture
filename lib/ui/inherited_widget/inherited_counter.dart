@@ -6,13 +6,12 @@ class InheritedCounter extends InheritedWidget {
   int count = 0;
 
   InheritedCounter({
-    Key key,
-    @required Widget child,
+    required Widget child,
   }) : assert(child != null),
-        super(key: key, child: child);
+        super(child: child);
 
 
-  static InheritedCounter of(BuildContext context) {
+  static InheritedCounter? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<InheritedCounter>();
   }
 
