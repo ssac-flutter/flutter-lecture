@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/http/repository/album_firestore_repository.dart';
+import 'package:flutter_app/ui/http/repository/album_repository.dart';
+import 'package:flutter_app/ui/http/repository/test_album_repository.dart';
+import 'package:flutter_app/ui/http/viewmodel/http_view_model.dart';
 import 'package:flutter_app/ui/main_page.dart';
 import 'package:flutter_app/ui/provider/counter.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +19,9 @@ void main() {
       providers: [
         ChangeNotifierProvider.value(
           value: Counter(),
+        ),
+        ChangeNotifierProvider.value(
+          value: HttpViewModel(TestAlbumRepository()),
         ),
       ],
       child: MyApp(),
